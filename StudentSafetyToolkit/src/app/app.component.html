@@ -1,3 +1,33 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-content>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-content>
+  <div *ngIf="!(isDisclaimerPage())">
+  <ion-footer>
+    <ion-tab-bar slot="bottom" color="primary">
+    <ion-tab-button [routerLink]="['/report-incident']">
+      <ion-icon name="document"></ion-icon>
+      <ion-label>Report Incident</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/risk-assessment']">
+      <ion-icon name="alert"></ion-icon>
+        <ion-label class="faLabel">Risk Assessment</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/links']">
+        <ion-icon name="link"></ion-icon>
+        <ion-label>Links</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/contacts']">
+        <ion-icon name="call"></ion-icon>
+        <ion-label>Contacts</ion-label>
+      </ion-tab-button>
+
+
+      <ion-tab-button [routerLink]="['/reminder']">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-label>Reminder</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-footer>
+</div>
 </ion-app>
