@@ -1,7 +1,8 @@
 {
   "name": "StudentSafetyToolkit",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
