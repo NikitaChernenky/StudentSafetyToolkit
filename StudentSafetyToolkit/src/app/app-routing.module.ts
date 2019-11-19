@@ -28,6 +28,10 @@ const routes: Routes = [
     path: 'disclaimer',
     loadChildren: () => import('./disclaimer/disclaimer.module').then( m => m.DisclaimerPageModule)
   },
+  {
+    path: 'app-info',
+    loadChildren: () => import('./app-info/app-info.module').then( m => m.AppInfoPageModule)
+  },
 ];
 
 @NgModule({
