@@ -1,0 +1,60 @@
+ion-card{
+    padding:0 0.8em 0 0.8em;
+}
+ion-text.title{
+color: var(--ion-color-secondary);
+text-align: center;
+}
+
+ion-text.default{
+color: var(--ion-color-dark);
+font-size: 1.2em;
+}
+ul.hw li{
+    margin: 0 0 0.4em 0;
+}
+
+ion-text.starred{
+color: var(--ion-color-dark);
+font-size: 1.2em;
+margin: 0;
+}
+
+ul.singleStar{
+    list-style:none;
+    padding-inline-start: 1em;
+}
+
+ul.singleStar li:before{
+    content: '\2A';
+    font-weight: bold;
+    display: inline-block;
+    margin-left: -1.4em; /* same as padding-left set on li */
+}
+
+ion-text.highlighted{
+    font-size: 1.2em;
+    color: var(--ion-color-danger);
+}
+
+ion-item.phoneNumber{
+    --border-width: 0.03em 0 0.03em 0;
+    --border-color: var(--ion-color-primary);
+}
+
+ion-list{
+    padding-top: 0.5em;
+}
+
+ion-button{
+    margin-top: 0.5em;
+    text-align: center;
+}
+ion-toolbar h4{
+    margin: 0.1em;
+    text-align: center;
+}
+
+span.bold{
+    font-weight: bold;
+}

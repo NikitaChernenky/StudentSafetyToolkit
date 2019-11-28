@@ -9,32 +9,48 @@ const routes: Routes = [
   },
   {
     path: 'contacts',
-    loadChildren: () => import('./contacts/contacts.module').then( m => m.ContactsPageModule)
+    loadChildren: () =>
+      import('./contacts/contacts.module').then(m => m.ContactsPageModule)
   },
   {
     path: 'links',
-    loadChildren: () => import('./links/links.module').then( m => m.LinksPageModule)
+    loadChildren: () =>
+      import('./links/links.module').then(m => m.LinksPageModule)
   },
   {
     path: 'reminder',
-    loadChildren: () => import('./reminder/reminder.module').then( m => m.ReminderPageModule)
+    loadChildren: () =>
+      import('./reminder/reminder.module').then(m => m.ReminderPageModule)
   },
   {
     path: 'risk-assessment',
-    loadChildren: () => import('./risk-assessment/risk-assessment.module').then( m => m.RiskAssessmentPageModule)
+    loadChildren: () =>
+      import('./risk-assessment/risk-assessment.module').then(
+        m => m.RiskAssessmentPageModule
+      )
   },
   {
     path: 'report-incident',
-    loadChildren: () => import('./report-incident/report-incident.module').then( m => m.ReportIncidentPageModule)
+    loadChildren: () =>
+      import('./report-incident/report-incident.module').then(
+        m => m.ReportIncidentPageModule
+      )
   },
   {
     path: 'disclaimer',
-    loadChildren: () => import('./disclaimer/disclaimer.module').then( m => m.DisclaimerPageModule)
+    loadChildren: () =>
+      import('./disclaimer/disclaimer.module').then(m => m.DisclaimerPageModule)
   },
   {
     path: 'app-info',
-    loadChildren: () => import('./app-info/app-info.module').then( m => m.AppInfoPageModule)
+    loadChildren: () =>
+      import('./app-info/app-info.module').then(m => m.AppInfoPageModule)
   },
+  { // It did not seem to work with a routing module, so I had to do it in oldschool angular way
+    path: 'incident-disclaimer-page',
+    loadChildren:
+      './report-incident/incident-disclaimer/incident-disclaimer.module#IncidentDisclaimerPageModule'
+  }
 ];
 
 @NgModule({
@@ -43,4 +59,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

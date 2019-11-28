@@ -28,5 +28,11 @@ export class MetadataService {
   getLinksData(): Observable<Link[]> {
     return of(LINKS);
   }
+
+  // For report incident disclaimer page
+  getContactsFrontPageData(): Observable<Contact[]> {
+    const contacts = [CONTACTS[2], CONTACTS[3]];
+    return of(contacts);
+  }
 }
 
