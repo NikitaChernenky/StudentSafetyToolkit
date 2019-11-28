@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-disclaimer',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisclaimerPage implements OnInit {
 
-  constructor() { }
+  agreedToConditions = false;
+  displayError = false;
 
-  ngOnInit() {
+  constructor(private router: Router, private storage: Storage) { }
+
+  ngOnInit() {}
+
+  isChecked() {
+    if (this.agreedToConditions) {
+      return true;
+    } else {
+        return false;
   }
+}
 
+
+  continue() {
+    if (this.isChecked()) {
+    this.storage.set('disclaimerShown', true);
+    this.router.navigate(['/app-info']);
+    } else {
+      this.displayError = true;
+    }
+  }
 }
