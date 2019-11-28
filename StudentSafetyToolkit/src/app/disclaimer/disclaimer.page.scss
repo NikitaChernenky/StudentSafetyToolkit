@@ -1,0 +1,29 @@
+ion-text.default{
+    color: var(--ion-color-dark);
+    font-size: 1.2em;
+    }
+div.disclaimerText{
+    margin: 0 0.5em 0 0.5em;
+}
+ion-card{
+        padding:0 0.8em 0 0.8em;
+    }
+
+ion-card-header{
+    color: var(--ion-color-primary);
+    background: rgba(255,255,255,0.5);
+}
+
+span.bold{
+        font-weight: bold;
+    }
+
+h2{
+    color: var(--ion-color-dark);
+    text-align: center;
+}
+
+.validationText{
+    color: var(--ion-color-danger);
+    font-style: italic;
+}

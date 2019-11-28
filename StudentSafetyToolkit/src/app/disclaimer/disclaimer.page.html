@@ -1,9 +1,48 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>disclaimer</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Supervisor Safety Toolkit
+    </ion-title>
   </ion-toolbar>
 </ion-header>
-
+<h2>Disclaimer</h2>
 <ion-content>
+    <div class="disclaimerText">
+    <ion-text class="default">
+      The information being downloaded is designed to provide a convenient and
+      helpful way for the University of Regina students and personnel to access timely information related
+      to campus safety and reporting. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Aenean scelerisque auctor elit in ultricies. Nam ac velit quis ligula tincidunt tincidunt 
+      non non augue. Suspendisse aliquet id est eu elementum. Phasellus lacinia nisl heppy.
+    </ion-text>
+  </div>
 
+
+  <ion-grid>
+    <ion-row>
+      <ion-col offset="0.5" size="0.7">
+        <ion-checkbox checked = "false" (ionChange)="agreedToConditions = !agreedToConditions"></ion-checkbox>
+
+      </ion-col>
+      <ion-col offset="0.7">
+        I have read and agree to the Terms and Conditions and Privacy Policy
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col offset="0.2">
+    <div class="validation">
+        <ng-container *ngIf="displayError" >
+          <div>
+           <ion-label class="validationText">* You must agree to the terms and conditions</ion-label>
+          </div>
+        </ng-container>
+      </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col offset="4" size="4" size-lg="4">
+        <ion-button (click)="continue()">Continue</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
