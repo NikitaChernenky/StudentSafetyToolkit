@@ -17,8 +17,8 @@ export class IncidentDisclaimerPage implements OnInit {
     this.getContacts();
   }
 
-  continueToReportincident() {
-    this.router.navigate(['/select-incident']);
+  continueToReportIncident() {
+    this.router.navigate(['/report-incident']);
   }
 
   getContacts(): void {
