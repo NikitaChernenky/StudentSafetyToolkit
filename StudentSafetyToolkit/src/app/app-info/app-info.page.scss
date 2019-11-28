@@ -1,0 +1,31 @@
+ion-text.default{
+    color: var(--ion-color-dark);
+    font-size: 1.2em;
+    }
+div.disclaimerText{
+    margin: 0 0.5em 0 0.5em;
+}
+
+span.bold{
+        font-weight: bold;
+    }
+
+h2{
+    color: var(--ion-color-dark);
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1.5em 0 1em;
+}
+
+h4{
+    color: var(--ion-color-primary);
+    font-size: 1.2em;
+    text-align: center;
+}
+
+ion-img{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
