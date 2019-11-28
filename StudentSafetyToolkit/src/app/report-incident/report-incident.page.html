@@ -1,9 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>report-incident</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-title> Select Incident</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-card *ngFor="let incident of incidents; index as i" button (click)="continueToForm(incident.title)">
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">{{incident.title}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
 </ion-content>

@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'incident-disclaimer',
     loadChildren: () => import('./incident-disclaimer/incident-disclaimer.module').then( m => m.IncidentDisclaimerPageModule)
+  },
+  {
+    path: 'form',
+    loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
   }
 ];
 

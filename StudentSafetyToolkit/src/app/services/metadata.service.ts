@@ -4,10 +4,12 @@ import { Observable, of } from 'rxjs';
 import {
   Metadata,
   Contact,
-  Link
+  Link,
+  Incident
 } from '../interfaces/metadata';
 import { CONTACTS } from '../data/contacts';
 import { LINKS } from '../data/links';
+import { INCIDENTS } from '../data/incidents';
 @Injectable({
   providedIn: 'root'
 })
@@ -33,6 +35,10 @@ export class MetadataService {
   getContactsFrontPageData(): Observable<Contact[]> {
     const contacts = [CONTACTS[2], CONTACTS[3]];
     return of(contacts);
+  }
+
+  getIncidentsData(): Observable<Incident[]> {
+    return of(INCIDENTS);
   }
 }
 

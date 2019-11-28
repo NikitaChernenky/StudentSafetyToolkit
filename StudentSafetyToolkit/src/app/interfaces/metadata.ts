@@ -26,3 +26,8 @@ export interface Contact {
     name: string;
     number: string;
   }
+
+export interface Incident {
+    title: string;
+    description: string;
+  }

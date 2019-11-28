@@ -50,7 +50,12 @@ const routes: Routes = [
     path: 'incident-disclaimer-page',
     loadChildren:
       './report-incident/incident-disclaimer/incident-disclaimer.module#IncidentDisclaimerPageModule'
-  }
+  },
+  {
+  path: 'form/:title',
+  loadChildren:
+    './report-incident/form/form.module#FormPageModule'
+}
 ];
 
 @NgModule({
