@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { MetadataService } from "src/app/services/metadata.service";
-import { Router } from "@angular/router";
-import { Incident } from "../interfaces/metadata";
+import { Component, OnInit } from '@angular/core';
+import { MetadataService } from 'src/app/services/metadata.service';
+import { Router } from '@angular/router';
+import { Incident } from '../interfaces/metadata';
 
 @Component({
-  selector: "app-report-incident",
-  templateUrl: "./report-incident.page.html",
-  styleUrls: ["./report-incident.page.scss"]
+  selector: 'app-report-incident',
+  templateUrl: './report-incident.page.html',
+  styleUrls: ['./report-incident.page.scss']
 })
 export class ReportIncidentPage implements OnInit {
   incidents: Incident[];
@@ -23,7 +23,7 @@ export class ReportIncidentPage implements OnInit {
   }
 
   continueToForm(inicdentType: string) {
-    this.router.navigate(["/form", inicdentType]);
+    this.router.navigate(['/form', inicdentType]);
   }
   /*
   SelectType(type: number) {
