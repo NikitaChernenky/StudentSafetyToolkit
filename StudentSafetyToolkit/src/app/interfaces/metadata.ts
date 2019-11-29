@@ -13,6 +13,7 @@ export interface Metadata {
     wrongAppVersionDisableMsg: string;
     links: Link[];
     contacts: Contact[];
+    incidents: Incident[];
   }
 export interface Link {
     name: string;

@@ -1,13 +1,17 @@
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title> Select Incident</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-    <ion-card *ngFor="let incident of incidents; index as i" button (click)="continueToForm(incident.title)">
-      <ion-card-header>
-        <ion-card-title class="ion-text-center">{{incident.title}}</ion-card-title>
-      </ion-card-header>
+    <ion-toolbar color="secondary">
+        <ion-title>
+            Select Incident
+        </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-card *ngFor="let incident of incidents">
+    <ion-item>
+        <ion-label class="ion-text-wrap">{{ incident.title }}</ion-label>
+        <ion-icon name="arrow-forward" slot="end" color="light"></ion-icon>
+    </ion-item>
+    <ion-card-content>{{ incident.description }}</ion-card-content>
     </ion-card>
-</ion-content>
+  </ion-content>
+  
