@@ -30,10 +30,11 @@ export class LinksPage implements OnInit {
   }
 
   onClick(link): void {
-    if (link === 'actual-link') {
-      window.open(link.url, '_system', 'location=yes');
+   // if (link.url === 'actual-link') {
+     if(link.filename !== '') {
+     this.openlocalPDF(link.filename);
     } else {
-      this.openlocalPDF(link.filename);
+      window.open(link.url, '_system', 'location=yes');
     }
   }
 
