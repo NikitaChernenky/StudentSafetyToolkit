@@ -1,0 +1,24 @@
+ion-text.default{
+    color: var(--ion-color-dark);
+    font-size: 1.2em;
+    }
+
+ion-textarea{
+    border: outset 0.005em var(--ion-color-dark);
+    padding: 0.2em;
+    margin: 0.5em 0 0.5em 0;
+}
+
+.validationText{
+    color: var(--ion-color-danger);
+    font-style: italic;
+}
+
+span.bold{
+    font-weight: bold;
+    margin: 0.5em 0 1em;
+}
+
+div.importantInfo{
+    margin: 0.5em 0 1em 0;
+}
