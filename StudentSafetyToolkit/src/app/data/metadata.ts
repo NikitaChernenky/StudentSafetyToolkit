@@ -2,7 +2,7 @@ import { Metadata } from '../interfaces/metadata';
 
 export const METADATA: Metadata = {
   appName: 'Student Safety ToolKit',
-  appId: 'supervisorsafetytoolkit',
+  appId: 'studentsafetytoolkit',
   build: '1',
   version: '1.0.0',
   checkAppVersion: false,
