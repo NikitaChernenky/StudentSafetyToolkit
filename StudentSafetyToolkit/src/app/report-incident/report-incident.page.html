@@ -6,7 +6,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-card *ngFor="let incident of incidents">
+    <ion-card *ngFor="let incident of incidents" (click)="continueToForm(incident.title)">
     <ion-item>
         <ion-label class="ion-text-wrap, cardLabel">{{ incident.title }}</ion-label>
         <ion-icon name="arrow-forward" slot="end" color="light"></ion-icon>
