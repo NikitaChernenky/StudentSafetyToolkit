@@ -1,0 +1,48 @@
+ion-card-content div{
+    font-size: 1.25em;
+}
+
+ul.singleStar{
+    list-style:none;
+    padding-inline-start: 1em;
+}
+
+ul.singleStar li:before{
+    content: '\2A';
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--ion-color-primary);
+    display: inline-block;
+    margin-right: 0.2em;
+}
+
+ion-item.hideButton{
+    color: var(--ion-color-primary);
+    text-decoration: underline;
+    text-align: center;
+    margin: 0;
+    font-style: normal;
+}
+
+ion-item.hideButton ion-label{
+    pointer-events:all!important;
+  }
+
+ion-card.tip {
+    font-size: 1.25em;
+    color: var(--ion-color-dark);
+    text-align: left;
+    font-style: italic;
+}
+
+ion-card ul li{
+    margin-bottom: 0.33em;
+}
+
+ion-card-content div a{
+    text-decoration: underline;
+}
+
+span.bold{
+    font-weight: bold;
+}

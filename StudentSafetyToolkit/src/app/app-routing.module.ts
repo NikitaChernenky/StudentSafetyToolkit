@@ -55,7 +55,9 @@ const routes: Routes = [
   path: 'form/:title',
   loadChildren:
     './report-incident/form/form.module#FormPageModule'
-}
+},
+{ path: 'select-severity', loadChildren: './risk-assessment/select-severity/select-severity.module#SelectSeverityPageModule' },
+{ path: 'result-list/:severity', loadChildren: './risk-assessment/result-list/result-list.module#ResultListPageModule' }
 ];
 
 @NgModule({

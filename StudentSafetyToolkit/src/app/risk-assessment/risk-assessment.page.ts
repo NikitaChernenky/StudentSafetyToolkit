@@ -1,33 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { MetadataService } from 'src/app/services/metadata.service';
 import { Router } from '@angular/router';
-import { Incident } from '../interfaces/metadata';
 
 @Component({
-  selector: 'app-report-incident',
-  templateUrl: './report-incident.page.html',
-  styleUrls: ['./report-incident.page.scss']
+  selector: 'app-risk-assessment',
+  templateUrl: './risk-assessment.page.html',
+  styleUrls: ['./risk-assessment.page.scss'],
 })
-export class ReportIncidentPage implements OnInit {
-  incidents: Incident[];
-  constructor(private router: Router, public dataService: MetadataService) {}
+export class RiskAssessmentPage implements OnInit {
+  constructor(
+    private router: Router,
+    public metaDataService: MetadataService
+  ) {}
 
-  ngOnInit() {
-    this.getIncidents();
-  }
+  ngOnInit() {}
 
-  getIncidents(): void {
-    this.dataService
-      .getIncidentsData()
-      .subscribe(incidents => (this.incidents = incidents));
-  }
-
-  continueToForm(inicdentType: string) {
-    this.router.navigate(['/form', inicdentType]);
-  }
-  /*
   SelectType(type: number) {
     this.metaDataService.SelectedType = this.metaDataService.Types[type];
     this.router.navigate(['/select-severity']);
-  }*/
+  }
 }

@@ -1,0 +1,295 @@
+<h1 class="ion-text-center">
+  <span class="bold">{{ severityStr }}</span>
+</h1>
+<ion-card button>
+  <ion-card-header>
+    <ion-card-title>Emergency Response</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content *ngIf="severity == 0">
+    <div>1. Lorem Ipsum text goes here</div>
+  </ion-card-content>
+
+  <ion-card-content *ngIf="severity == 1">
+    <div>
+      1. Interdum et malesuada fames ac ante ipsum<br />
+      2. Activate Emergency Response Plan
+    </div>
+  </ion-card-content>
+
+  <ion-card-content *ngIf="severity == 2">
+    <div>
+      1. Interdum et malesuada fames ac ante ipsum<br />
+      2. Interdum et malesuada fames ac ante ipsum
+    </div>
+  </ion-card-content>
+
+  <ion-card-content *ngIf="severity == 3">
+    <div>
+      1. Interdum et malesuada fames ac ante ipsum<br />
+      2. Interdum et malesuada fames ac ante ipsum
+    </div>
+  </ion-card-content>
+</ion-card>
+
+<ion-card button>
+  <ion-card-header>
+    <ion-card-title>Communication</ion-card-title>
+  </ion-card-header>
+  <ion-card-content *ngIf="severity == 0">
+    <div>
+      Follow normal reporting guidelines:
+      <ul>
+        <li>Lab Instructor</li>
+      </ul>
+      lab instructor shall notify the following:
+      <ul>
+        <li>Campus Security<a clickable (click)="tipShow(0, 1)">&#42;</a></li>
+        <li>Some other cool departnent</li>
+      </ul>
+    </div>
+  </ion-card-content>
+
+  <ion-card-content *ngIf="severity == 1">
+    <div>
+      Interdum et malesuada fames ac ante ipsum
+
+      <ul>
+        <li>OInterdum et malesuada fames ac ante ipsum</li>
+        <li>Professor</li>
+      </ul>
+      Professor shall notify the following:
+      <ul>
+        <li>
+          Campus Security Department
+        </li>
+        <li>Interdum et malesuada fames ac ante ipsum</li>
+      </ul>
+    </div>
+  </ion-card-content>
+
+  <ion-card-content *ngIf="severity == 2">
+    <div>
+      Follow regular reporting instructions:
+      <ul>
+        <li>Some Line 306 999 9999</li>
+        <li>Interdum et ipsum</li>
+        <li>
+          Interdum et malesuada
+        </li>
+      </ul>
+      Interdum et malesuada fames ac ante ipsum
+      <ul>
+        <li>Interdum et malesuada fames</li>
+        <li>
+          Interdum et malesuada fames ac ante ipsum
+        </li>
+
+        <li>
+          Interdum et malesuada fames avec maricon
+        </li>
+
+        <li>
+          Wellness Department
+        </li>
+        <li>Interdum et malesuada fames ac ante ipsum</li>
+      </ul>
+    </div>
+  </ion-card-content>
+</ion-card>
+
+<ion-card-content *ngIf="severity == 3">
+  <div>
+    Follow regular reporting instructions:
+    <ul>
+      <li>Some Line 306 999 9999</li>
+      <li>Interdum et ipsum</li>
+      <li>
+        Interdum et malesuada
+      </li>
+    </ul>
+    Interdum et malesuada fames ac ante ipsum
+    <ul>
+      <li>Interdum et malesuada fames</li>
+      <li>
+        Interdum et malesuada fames ac ante ipsum
+      </li>
+
+      <li>
+        Interdum et malesuada fames avec maricon
+      </li>
+
+      <li>
+        Wellness Department
+      </li>
+      <li>Interdum et malesuada fames ac ante ipsum</li>
+    </ul>
+  </div>
+</ion-card-content>
+
+<ion-card button>
+  <ion-card-header>
+    <ion-card-title>Something</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content *ngIf="severity == 0">
+    <div>
+      <ul>
+        <li>
+          Lorem Ipsum
+        </li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>
+          Nam ultrices, sem nec commodo euismod, velit ipsum tincidunt nisi, at
+          pulvinar nisl arcu quis leo. Praesent urna magna, fringilla sed purus
+          auctor, fermentum pharetra lectus
+        </li>
+        <li>
+          Nullam in auctor arcu. In mattis cursus leo, vitae luctus augue
+          feugiat a. Nam faucibus finibus sapien, eget commodo tortor commodo ac
+        </li>
+        <li>
+          Nullam in auctor arcu. In mattis cursus leo, vitae luctus augue
+          feugiat a. Nam faucibus finibus sapien, eget commodo tortor commodo ac
+        </li>
+      </ul>
+    </div>
+  </ion-card-content>
+
+  <ion-card-content *ngIf="severity == 1">
+      <div>
+          <ul>
+            <li>
+              Lorem Ipsum
+            </li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li>
+              Nam ultrices, sem nec commodo euismod, velit ipsum tincidunt nisi, at
+              pulvinar nisl arcu quis leo. Praesent urna magna, fringilla sed purus
+              auctor, fermentum pharetra lectus
+            </li>
+            <li>
+              Nullam in auctor arcu. In mattis cursus leo, vitae luctus augue
+              feugiat a. Nam faucibus finibus sapien, eget commodo tortor commodo ac
+            </li>
+            <li>
+              Nullam in auctor arcu. In mattis cursus leo, vitae luctus augue
+              feugiat a. Nam faucibus finibus sapien, eget commodo tortor commodo ac
+            </li>
+          </ul>
+        </div>
+      </ion-card-content>
+
+  <ion-card-content *ngIf="severity == 2">
+      <div>
+          <ul>
+            <li>
+              Lorem Ipsum
+            </li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li>
+              Nam ultrices, sem nec commodo euismod, velit ipsum tincidunt nisi, at
+              pulvinar nisl arcu quis leo. Praesent urna magna, fringilla sed purus
+              auctor, fermentum pharetra lectus
+            </li>
+            <li>
+              Nullam in auctor arcu. In mattis cursus leo, vitae luctus augue
+              feugiat a. Nam faucibus finibus sapien, eget commodo tortor commodo ac
+            </li>
+            <li>
+              Nullam in auctor arcu. In mattis cursus leo, vitae luctus augue
+              feugiat a. Nam faucibus finibus sapien, eget commodo tortor commodo ac
+            </li>
+          </ul>
+        </div>
+      </ion-card-content>
+
+  <ion-card-content *ngIf="severity == 3">
+      <div>
+          <ul>
+            <li>
+              Lorem Ipsum
+            </li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li>
+              Nam ultrices, sem nec commodo euismod, velit ipsum tincidunt nisi, at
+              pulvinar nisl arcu quis leo. Praesent urna magna, fringilla sed purus
+              auctor, fermentum pharetra lectus
+            </li>
+            <li>
+              Nullam in auctor arcu. In mattis cursus leo, vitae luctus augue
+              feugiat a. Nam faucibus finibus sapien, eget commodo tortor commodo ac
+            </li>
+            <li>
+              Nullam in auctor arcu. In mattis cursus leo, vitae luctus augue
+              feugiat a. Nam faucibus finibus sapien, eget commodo tortor commodo ac
+            </li>
+          </ul>
+        </div>
+      </ion-card-content>
+</ion-card>
+<ion-card button>
+  <ion-card-header>
+    <ion-card-title> Dangerous occurence</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content *ngIf="severity == 0">
+    <div>
+      <ul>
+        <li>Safety Care Linee – 24 Hours</li>
+        <li>
+            Ut porta ut odio interdum auctor. Nullam feugiat interdum metus sed porta.
+        </li>
+        <li>Ut porta ut odio interdum auctor. Nullam feugiat interdum metus sed porta.</li>
+        <li>
+            In hac habitasse platea dictumst. Nam ullamcorper dapibus libero vel eleifend
+        </li>
+      </ul>
+    </div>
+  </ion-card-content>
+
+  <ion-card-content *ngIf="severity == 1">
+      <div>
+          <ul>
+            <li>Safety Care Linee – 24 Hours</li>
+            <li>
+                Ut porta ut odio interdum auctor. Nullam feugiat interdum metus sed porta.
+            </li>
+            <li>Ut porta ut odio interdum auctor. Nullam feugiat interdum metus sed porta.</li>
+            <li>
+                In hac habitasse platea dictumst. Nam ullamcorper dapibus libero vel eleifend
+            </li>
+          </ul>
+        </div>
+      </ion-card-content>
+
+  <ion-card-content *ngIf="severity == 2">
+      <div>
+          <ul>
+            <li>Safety Care Linee – 24 Hours</li>
+            <li>
+                Ut porta ut odio interdum auctor. Nullam feugiat interdum metus sed porta.
+            </li>
+            <li>Ut porta ut odio interdum auctor. Nullam feugiat interdum metus sed porta.</li>
+            <li>
+                In hac habitasse platea dictumst. Nam ullamcorper dapibus libero vel eleifend
+            </li>
+          </ul>
+        </div>
+      </ion-card-content>
+
+  <ion-card-content *ngIf="severity == 3">
+      <div>
+          <ul>
+            <li>Safety Care Linee – 24 Hours</li>
+            <li>
+                Ut porta ut odio interdum auctor. Nullam feugiat interdum metus sed porta.
+            </li>
+            <li>Ut porta ut odio interdum auctor. Nullam feugiat interdum metus sed porta.</li>
+            <li>
+                In hac habitasse platea dictumst. Nam ullamcorper dapibus libero vel eleifend
+            </li>
+          </ul>
+        </div>
+      </ion-card-content>
+</ion-card>

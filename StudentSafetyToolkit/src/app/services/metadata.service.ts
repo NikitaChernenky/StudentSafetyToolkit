@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Incident2 } from '../classes/incident';
 import { Observable, of } from 'rxjs';
 import {
   Metadata,
@@ -17,8 +18,8 @@ import TypesJSON from '../data/incidents.json';
 export class MetadataService {
   Metadata: Metadata;
 
-  // used for test purposes
-  private metadataUrl = '../data/metadata.json';
+  Types = TypesJSON;
+  SelectedType = this.Types[0];
 
   constructor(private http: HttpClient) {}
 
