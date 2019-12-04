@@ -5,7 +5,12 @@
     "types": []
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "../node_modules/ionic2-calendar/*.ts",
+    //"../node_modules/ionic2-calendar/**/*.ts",
+    //"../node_modules/ionic2-calendar/src/*.ts",
+    //"main.ts",
+    //"polyfills.ts"
   ],
   "exclude": [
     "src/test.ts",

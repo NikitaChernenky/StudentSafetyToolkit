@@ -1,77 +1,123 @@
-import { Component, OnInit, NgZone } from '@angular/core';
-import { Calendar } from '@ionic-native/calendar/ngx';
-
-import { ModalController, NavController, Platform } from '@ionic/angular';
-import { CalendarService } from '../services/calendar.service';
-import { DetailsPage } from './details/details.page';
+import { CalendarComponent } from 'ionic2-calendar/calendar';
+import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { formatDate } from '@angular/common';
+// import { CalendarComponent } from 'ionic2-calendar/calendar';
+// import { MonthViewComponent } from 'ionic2-calendar/monthview';
+// import { WeekViewComponent } from 'ionic2-calendar/weekview';
+// import { DayViewComponent } from 'ionic2-calendar/dayview';
 
 @Component({
   selector: 'app-reminder',
   templateUrl: './reminder.page.html',
   styleUrls: ['./reminder.page.scss'],
 })
-export class ReminderPage {
-  public calendars = [];
+export class ReminderPage implements OnInit {
+
+  event = {
+    title: '',
+    desc: '',
+    startTime: '',
+    endTime: '',
+    allDay: false
+  };
+
+  minDate = new Date().toISOString();
+
+  eventSource = [];
   viewTitle;
-  noEventsLabel = 'No Events';
-  showEventDetail = false;
-  isToday: boolean;
+
   calendar = {
     mode: 'month',
-    currentDate: new Date()
-  }; // these are the variable used by the calendar.
-  constructor(private calendarService: CalendarService,
-              private navCtrl: NavController,
-              private platform: Platform,
-              private zone: NgZone,
-              private modalCtrl: ModalController) {
-  }
-  ionViewDidLoad() {
-    this.platform.ready().then(() => {
-      this.calendarService.initDB();
+    currentDate: new Date(),
+  };
 
-      this.calendarService.getAll()
-        .then(data => {
-          this.zone.run(() => {
-            this.calendars = data;
-          });
-        })
-        .catch(console.error.bind(console));
-    });
+  @ViewChild(CalendarComponent, {static: false}) myCal: CalendarComponent;
+
+  constructor(private alertCtrl: AlertController, @Inject(LOCALE_ID) private locale: string) { }
+
+  ngOnInit() {
+    this.resetEvent();
   }
-  async showDetail(calendar) {
-    const modal = await this.modalCtrl.create({ component: DetailsPage, componentProps: { calendar } });
-    return await modal.present();
+
+  resetEvent() {
+    this.event = {
+      title: '',
+      desc: '',
+      startTime: new Date().toISOString(),
+      endTime: new Date().toISOString(),
+      allDay: false
+    };
   }
-  onViewTitleChanged(title) {
-    this.viewTitle = title;
+
+  // Create the right event format and reload source
+  addEvent() {
+    const eventCopy = {
+      title: this.event.title,
+      startTime:  new Date(this.event.startTime),
+      endTime: new Date(this.event.endTime),
+      allDay: this.event.allDay,
+      desc: this.event.desc
+    };
+
+    if (eventCopy.allDay) {
+      const start = eventCopy.startTime;
+      const end = eventCopy.endTime;
+
+      eventCopy.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
+      eventCopy.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() + 1));
+    }
+
+    this.eventSource.push(eventCopy);
+    this.myCal.loadEvents();
+    this.resetEvent();
   }
-  onEventSelected(event) {
-    console.log('Event selected:' + event.startTime + '-' + event.endTime + ',' + event.title);
+
+  next() {
+    const swiper = document.querySelector('.swiper-container')['swiper'];
+    swiper.slideNext();
   }
+
+  back() {
+    const swiper = document.querySelector('.swiper-container')['swiper'];
+    swiper.slidePrev();
+  }
+
+  // Change between month/week/day
   changeMode(mode) {
     this.calendar.mode = mode;
   }
+
+  // Focus today
   today() {
     this.calendar.currentDate = new Date();
   }
+
+  // Selected date reange and hence title changed
+  onViewTitleChanged(title) {
+    this.viewTitle = title;
+  }
+
+  // Calendar event was clicked
+  async onEventSelected(event) {
+    // Use Angular date pipe for conversion
+    const start = formatDate(event.startTime, 'medium', this.locale);
+    const end = formatDate(event.endTime, 'medium', this.locale);
+
+    const alert = await this.alertCtrl.create({
+      header: event.title,
+      subHeader: event.desc,
+      message: 'From: ' + start + '<br><br>To: ' + end,
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+  // Time slot was clicked
   onTimeSelected(ev) {
-    console.log('Selected time: ' + ev.selectedTime + ', hasEvents: ' +
-      (ev.events !== undefined && ev.events.length !== 0) + ', disabled: ' + ev.disabled);
-    this.calendar.currentDate = ev.selectedTime;
-  }
-  onCurrentDateChanged(event: Date) {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    event.setHours(0, 0, 0, 0);
-    this.isToday = today.getTime() === event.getTime();
-  }
-  onRangeChanged(ev) {
-    console.log('range changed: startTime: ' + ev.startTime + ', endTime: ' + ev.endTime);
-  }
-  markDisabled = (date: Date) => {
-    const current = new Date();
-    current.setHours(0, 0, 0);
-    return date < current;
+    const selected = new Date(ev.selectedTime);
+    this.event.startTime = selected.toISOString();
+    selected.setHours(selected.getHours() + 1);
+    this.event.endTime = (selected.toISOString());
   }
 }

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ReminderPageRoutingModule } from './reminder-routing.module';
 
 import { ReminderPage } from './reminder.page';
-import { NgCalendarModule } from 'ionic2-calendar';
+import { NgCalendarModule  } from 'ionic2-calendar';
 
 
 @NgModule({
@@ -18,6 +18,9 @@ import { NgCalendarModule } from 'ionic2-calendar';
     ReminderPageRoutingModule,
     NgCalendarModule
   ],
-  declarations: [ReminderPage]
+  declarations: [ReminderPage],
+  entryComponents: [
+    ReminderPage
+  ]
 })
 export class ReminderPageModule {}

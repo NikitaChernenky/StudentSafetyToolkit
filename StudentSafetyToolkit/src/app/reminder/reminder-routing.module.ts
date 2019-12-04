@@ -8,10 +8,6 @@ const routes: Routes = [
     path: '',
     component: ReminderPage
   },
-  {
-    path: 'details',
-    loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
-  }
 ];
 
 @NgModule({

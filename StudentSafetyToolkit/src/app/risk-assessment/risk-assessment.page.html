@@ -1,9 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>risk-assessment</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+    <ion-toolbar color="secondary">
+        <ion-title>
+            Select Task
+        </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-card *ngFor="let incident of incidents" (click)="continueToForm(incident.title)">
+    <ion-item>
+        <ion-label class="ion-text-wrap, cardLabel">{{ incident.title }}</ion-label>
+        <ion-icon name="arrow-forward" slot="end" color="light"></ion-icon>
+    </ion-item>
+    <ion-card-content>{{ incident.description }}</ion-card-content>
+    </ion-card>
+  </ion-content>
+  

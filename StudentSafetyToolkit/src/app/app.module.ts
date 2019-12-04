@@ -19,17 +19,14 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { File } from '@ionic-native/file/ngx';
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
-import { DetailsPage } from './reminder/details/details.page';
 import { ModalController} from '@ionic/angular';
-import { CalendarService } from './services/calendar.service';
-import { NgCalendarModule  } from 'ionic2-calendar';
+// import { NgCalendarModule  } from 'ionic2-calendar';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, DetailsPage],
-  entryComponents: [DetailsPage],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -38,8 +35,8 @@ import { NgCalendarModule  } from 'ionic2-calendar';
     AppRoutingModule,
     IonicStorageModule.forRoot(),
     HttpClientModule,
-    NativeHttpModule,
-    NgCalendarModule
+    NativeHttpModule
+    // NgCalendarModule
 
   ],
   providers: [
@@ -51,7 +48,6 @@ import { NgCalendarModule  } from 'ionic2-calendar';
     File,
     DocumentViewer,
     EmailComposer,
-    CalendarService
 
 
   ],

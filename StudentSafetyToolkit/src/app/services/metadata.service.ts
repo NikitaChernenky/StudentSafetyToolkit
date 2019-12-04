@@ -10,6 +10,7 @@ import {
 import { CONTACTS } from '../data/contacts';
 import { LINKS } from '../data/links';
 import { INCIDENTS } from '../data/incidents';
+import TypesJSON from '../data/incidents.json';
 @Injectable({
   providedIn: 'root'
 })

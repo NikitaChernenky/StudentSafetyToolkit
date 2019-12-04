@@ -14,6 +14,10 @@
   ],
   "include": [
     "src/**/*.spec.ts",
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "../node_modules/ionic2-calendar/src/index.ts",
+    "./src/main.ts",
+    "./src/polyfills.ts"
   ]
+  
 }
