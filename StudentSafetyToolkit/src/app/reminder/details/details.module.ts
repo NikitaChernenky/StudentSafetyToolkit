@@ -4,20 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ReminderPageRoutingModule } from './reminder-routing.module';
+import { DetailsPageRoutingModule } from './details-routing.module';
 
-import { ReminderPage } from './reminder.page';
+import { DetailsPage } from './details.page';
 import { NgCalendarModule } from 'ionic2-calendar';
-
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReminderPageRoutingModule,
+    DetailsPageRoutingModule,
     NgCalendarModule
   ],
-  declarations: [ReminderPage]
+  declarations: [DetailsPage],
+  exports: [DetailsPage]
 })
-export class ReminderPageModule {}
+export class DetailsPageModule {}
