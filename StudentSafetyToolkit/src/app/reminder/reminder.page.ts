@@ -13,18 +13,18 @@ import { DetailsPage } from './details/details.page';
 export class ReminderPage {
   public calendars = [];
   viewTitle;
-  noEventsLabel: string = 'No Events';
-  showEventDetail: boolean = false;
+  noEventsLabel = 'No Events';
+  showEventDetail = false;
   isToday: boolean;
   calendar = {
     mode: 'month',
     currentDate: new Date()
   }; // these are the variable used by the calendar.
   constructor(private calendarService: CalendarService,
-    private navCtrl: NavController,
-    private platform: Platform,
-    private zone: NgZone,
-    private modalCtrl: ModalController) {
+              private navCtrl: NavController,
+              private platform: Platform,
+              private zone: NgZone,
+              private modalCtrl: ModalController) {
   }
   ionViewDidLoad() {
     this.platform.ready().then(() => {
@@ -40,7 +40,7 @@ export class ReminderPage {
     });
   }
   async showDetail(calendar) {
-    const modal = await this.modalCtrl.create({ component: DetailsPage, componentProps: { calendar: calendar } });
+    const modal = await this.modalCtrl.create({ component: DetailsPage, componentProps: { calendar } });
     return await modal.present();
   }
   onViewTitleChanged(title) {
@@ -61,7 +61,7 @@ export class ReminderPage {
     this.calendar.currentDate = ev.selectedTime;
   }
   onCurrentDateChanged(event: Date) {
-    var today = new Date();
+    const today = new Date();
     today.setHours(0, 0, 0, 0);
     event.setHours(0, 0, 0, 0);
     this.isToday = today.getTime() === event.getTime();
@@ -70,8 +70,8 @@ export class ReminderPage {
     console.log('range changed: startTime: ' + ev.startTime + ', endTime: ' + ev.endTime);
   }
   markDisabled = (date: Date) => {
-    var current = new Date();
+    const current = new Date();
     current.setHours(0, 0, 0);
     return date < current;
-  };
+  }
 }
