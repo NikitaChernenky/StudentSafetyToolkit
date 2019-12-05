@@ -19,12 +19,6 @@ export class SeverityDetailComponent implements OnInit {
     switch (severity) {
       case 0:
         this.severityStr = 'MINOR';
-        /*
-        this.emergency = ``;
-        this.communication = ``;
-        this.bulletin = ``;
-        this.reporting = ``;
-        */
         break;
       case 1:
         this.severityStr = 'SIGNIFICANT';
