@@ -18,7 +18,7 @@
           <a href="tel:{{contact.number}}">{{contact.number}}</a>
             </ion-col>
             <ion-col size="3" size-lg="3" size xs="3" *ngIf="contact.name !== 'First Aid Line (24 HRS)'">
-                <ion-button block (click)="continueToEmail()">E-mail</ion-button>
+                <ion-button block (click)="continueToEmail(contact.name)">E-mail</ion-button>
             </ion-col>
         </ion-row>
     </ion-grid>

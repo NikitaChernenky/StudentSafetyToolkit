@@ -1,6 +1,6 @@
 [
   {
-    "title": "Injury",
+    "title": "Lab operations",
     "severities": [
       "Phasellus lacinia nisl sed scelerisque vulputate. Maecenas quam ligula, tincidunt a porttitor nec, imperdiet ut metus. Etiam vehicula non elit ac congue. Vivamus enim odio.",
       "Vestibulum semper efficitur velit, id maximus urna. Nullam facilisis lectus id egestas bibendum. Nulla blandit risus lorem, sed tristique eros rutrum nec.",
@@ -9,7 +9,7 @@
     ]
   },
   {
-    "title": "Notice of Violation",
+    "title": "Equipment Maintenance",
     "severities": [
       "Vestibulum semper efficitur velit, id maximus urna. Nullam facilisis lectus id egestas bibendum. Nulla blandit risus lorem, sed tristique eros rutrum nec.",
       "Phasellus lacinia nisl sed scelerisque vulputate. Maecenas quam ligula, tincidunt a porttitor nec, imperdiet ut metus. Etiam vehicula non elit ac congue. Vivamus enim odio.",
@@ -18,7 +18,7 @@
     ]
   },
   {
-    "title": "Property",
+    "title": "Action#3",
     "severities": [
       "Donec tincidunt tempor leo, id pharetra magna ornare at. Praesent quis pellentesque sapien, ut ullamcorper purus. Curabitur eget fringilla nisl.",
       "Vestibulum semper efficitur velit, id maximus urna. Nullam facilisis lectus id egestas bibendum. Nulla blandit risus lorem, sed tristique eros rutrum nec.",
@@ -27,7 +27,7 @@
     ]
   },
   {
-    "title": "Violence",
+    "title": "Action#4",
     "severities": [
       "Ut pharetra quam enim, vel vulputate leo consectetur vel. Mauris neque augue, elementum eget orci ac, eleifend convallis justo. Pellentesque sed diam iaculis, aliquam elit tempor, ultrices ante.",
       "Phasellus lacinia nisl sed scelerisque vulputate. Maecenas quam ligula, tincidunt a porttitor nec, imperdiet ut metus. Etiam vehicula non elit ac congue. Vivamus enim odio.",
