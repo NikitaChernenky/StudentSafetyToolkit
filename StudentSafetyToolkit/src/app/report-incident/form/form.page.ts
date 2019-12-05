@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -17,12 +17,25 @@ export class FormPage implements OnInit {
   public date = '';
   public title = '';
 
-  constructor(private router: Router,  private emailComposer: EmailComposer, private _Activatedroute: ActivatedRoute) { }
+  routeParams: Params;
 
-  ngOnInit() {
+  constructor(private router: Router,  private emailComposer: EmailComposer, private activatedRoute: ActivatedRoute) {
+    this.getRouteParams();
+   }
+
+   getRouteParams() {
+
+    // Route parameters
+    this.activatedRoute.params.subscribe( params => {
+        this.routeParams = params;
+    });
+  }
+
+    ngOnInit() {
+      this.title = this.routeParams.title;
     // get a value for max date
-    const now = new Date();
-    this.maxDate =
+      const now = new Date();
+      this.maxDate =
       now.getFullYear() +
       '-' +
       String(now.getMonth() + 1).padStart(2, '0') +
@@ -30,14 +43,13 @@ export class FormPage implements OnInit {
       String(now.getDate()).padStart(2, '0');
 
     // read the passed in variable (title of incident)
-    this._Activatedroute.params.subscribe(params => {
-      this.title = params.get('title');
-      });
-    console.log(this.title);
+    // this.activatedRoute.params.subscribe(params => {
+    //  this.title = params.get('title');
+    //  });
 
   }
 
-  email() {
+    email() {
     const readableDate = this.date.replace(/T/, ' ').replace(/\..+/, '');
 
     const email = {
