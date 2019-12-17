@@ -1,3 +1,8 @@
+/*
+Mykyta Chernenky
+CS 455 - Mobile Computing
+Select Severity Form
+*/
 import { Component, OnInit } from '@angular/core';
 import { MetadataService } from 'src/app/services/metadata.service';
 import { Router } from '@angular/router';
@@ -18,7 +23,7 @@ export class SelectSeverityPage implements OnInit {
 
   }
 
-  SelectSeverity(index: number) {
+  SelectSeverity(index: number) { // When user click the severity, send it as a parameter to the Result List Page
     const url = 'result-list/' + index;
     this.router.navigate([url]);
   }

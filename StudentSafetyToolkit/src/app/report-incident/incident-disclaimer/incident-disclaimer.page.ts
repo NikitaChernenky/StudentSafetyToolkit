@@ -1,3 +1,8 @@
+/*
+Mykyta Chernenky
+CS 455 - Mobile Computing
+Report Incident Disclaimer Page
+*/
 import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/interfaces/metadata';
 import { MetadataService } from 'src/app/services/metadata.service';
@@ -14,14 +19,14 @@ export class IncidentDisclaimerPage implements OnInit {
   constructor(private dataService: MetadataService, private router: Router) {}
 
   ngOnInit() {
-    this.getContacts();
+    this.getContacts(); //retrieve contacts on load
   }
 
-  continueToReportIncident() {
+  continueToReportIncident() { //when Continue button is clicked - navigate to Report Incident Page
     this.router.navigate(['/report-incident']);
   }
 
-  getContacts(): void {
+  getContacts(): void { //get 2 contacts form the list
     this.dataService
       .getContactsFrontPageData()
       .subscribe(contacts => (this.contacts = contacts));

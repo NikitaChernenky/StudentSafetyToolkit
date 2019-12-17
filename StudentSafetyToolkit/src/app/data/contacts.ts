@@ -1,3 +1,8 @@
+/*
+Mykyta Chernenky
+CS 455 - Mobile Computing
+Contacts.ts - Contacts data file
+*/
 import { Contact } from '../interfaces/metadata';
 
 export const CONTACTS: Contact[] = [

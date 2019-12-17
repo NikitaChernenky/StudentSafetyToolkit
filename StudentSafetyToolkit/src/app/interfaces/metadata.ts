@@ -1,4 +1,9 @@
-export interface Metadata {
+/*
+Mykyta Chernenky
+CS 455 - Mobile Computing
+Metadata.ts
+*/
+export interface Metadata { 
     appName: string;
     appId: string;
     version: string;
@@ -15,7 +20,7 @@ export interface Metadata {
     contacts: Contact[];
     incidents: Incident[];
   }
-export interface Link {
+export interface Link { //interface for Links
     name: string;
     description: string;
     url: string;
@@ -23,12 +28,12 @@ export interface Link {
     filename: string;
   }
 
-export interface Contact {
+export interface Contact { //interface for Contacts
     name: string;
     number: string;
   }
 
-export interface Incident {
+export interface Incident { //interface for incidents
     title: string;
     description: string;
   }

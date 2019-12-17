@@ -1,3 +1,8 @@
+/*
+Mykyta Chernenky
+CS 455 - Mobile Computing
+*/
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

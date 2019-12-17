@@ -1,11 +1,13 @@
+/*
+Mykyta Chernenky
+CS 455 - Mobile Computing
+PLEASE NOTE: Parts of this code were taken from https://devdactic.com/ionic-4-calendar-app/
+*/
+
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
-// import { CalendarComponent } from 'ionic2-calendar/calendar';
-// import { MonthViewComponent } from 'ionic2-calendar/monthview';
-// import { WeekViewComponent } from 'ionic2-calendar/weekview';
-// import { DayViewComponent } from 'ionic2-calendar/dayview';
 
 @Component({
   selector: 'app-reminder',
@@ -14,7 +16,7 @@ import { formatDate } from '@angular/common';
 })
 export class ReminderPage implements OnInit {
 
-  event = {
+  event = { //this is basically a default constructor/ It initiates calendar variables with empty string.
     title: '',
     desc: '',
     startTime: '',
@@ -22,25 +24,25 @@ export class ReminderPage implements OnInit {
     allDay: false
   };
 
-  minDate = new Date().toISOString();
+  minDate = new Date().toISOString(); //assigns today's date and converts it t string
 
-  eventSource = [];
+  eventSource = []; //initiate even source array
   viewTitle;
 
-  calendar = {
-    mode: 'month',
-    currentDate: new Date(),
+  calendar = { //default calendar 
+    mode: 'month', // default view is month
+    currentDate: new Date(), 
   };
 
-  @ViewChild(CalendarComponent, {static: false}) myCal: CalendarComponent;
+  @ViewChild(CalendarComponent, {static: false}) myCal: CalendarComponent; // open CalendarComponent via 'lazy loading'
 
   constructor(private alertCtrl: AlertController, @Inject(LOCALE_ID) private locale: string) { }
 
   ngOnInit() {
-    this.resetEvent();
+    this.resetEvent(); //make sure that New Event's fields are empty on load
   }
 
-  resetEvent() {
+  resetEvent() { //reset new event fields
     this.event = {
       title: '',
       desc: '',
@@ -50,9 +52,9 @@ export class ReminderPage implements OnInit {
     };
   }
 
-  // Create the right event format and reload source
-  addEvent() {
-    const eventCopy = {
+
+  addEvent() {   // Create event in the correct format, push it to the source(database) and reset new even fields
+    const eventCopy = { //copy all values
       title: this.event.title,
       startTime:  new Date(this.event.startTime),
       endTime: new Date(this.event.endTime),
@@ -60,40 +62,40 @@ export class ReminderPage implements OnInit {
       desc: this.event.desc
     };
 
-    if (eventCopy.allDay) {
+    if (eventCopy.allDay) { // if the event is set for all day
       const start = eventCopy.startTime;
       const end = eventCopy.endTime;
 
-      eventCopy.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
-      eventCopy.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() + 1));
+      eventCopy.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate())); //today's date
+      eventCopy.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() + 1)); //tomorrow's date
     }
 
-    this.eventSource.push(eventCopy);
-    this.myCal.loadEvents();
-    this.resetEvent();
+    this.eventSource.push(eventCopy); //add the event to the source (database)
+    this.myCal.loadEvents(); //load events from the database
+    this.resetEvent(); //reset new even fields
   }
 
-  next() {
+  next() { //for swiping right to see the next month/week
     const swiper = document.querySelector('.swiper-container')['swiper'];
     swiper.slideNext();
   }
 
-  back() {
+  back() { //for swiping left to see the previous month/week
     const swiper = document.querySelector('.swiper-container')['swiper'];
     swiper.slidePrev();
   }
 
-  // Change between month/week/day
+  // Change mode between month/week/day
   changeMode(mode) {
     this.calendar.mode = mode;
   }
 
-  // Focus today
+  // Focus on today
   today() {
     this.calendar.currentDate = new Date();
   }
 
-  // Selected date reange and hence title changed
+  // Changes title when changing month/week/day
   onViewTitleChanged(title) {
     this.viewTitle = title;
   }
@@ -101,16 +103,16 @@ export class ReminderPage implements OnInit {
   // Calendar event was clicked
   async onEventSelected(event) {
     // Use Angular date pipe for conversion
-    const start = formatDate(event.startTime, 'medium', this.locale);
-    const end = formatDate(event.endTime, 'medium', this.locale);
+    const start = formatDate(event.startTime, 'medium', this.locale); //start date selected
+    const end = formatDate(event.endTime, 'medium', this.locale); //end date selected
 
-    const alert = await this.alertCtrl.create({
+    const alert = await this.alertCtrl.create({ //creates alert in the applciation
       header: event.title,
       subHeader: event.desc,
       message: 'From: ' + start + '<br><br>To: ' + end,
       buttons: ['OK']
     });
-    alert.present();
+    alert.present(); //shows alert in the app
   }
 
   // Time slot was clicked

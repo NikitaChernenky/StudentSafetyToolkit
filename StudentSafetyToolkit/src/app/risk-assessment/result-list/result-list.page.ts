@@ -1,3 +1,8 @@
+/*
+Mykyta Chernenky
+CS 455 - Mobile Computing
+Result List page - Show Risk Assessment final page
+*/
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,11 +13,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResultListPage implements OnInit {
 
-  public severity = 0;
+  public severity = 0; //initialize severity
 
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.severity = +this.activatedRoute.snapshot.paramMap.get('severity');
+    this.severity = +this.activatedRoute.snapshot.paramMap.get('severity'); //receive severiy parameter from the previous tab (Select Severity)
   }
 }
