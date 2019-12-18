@@ -1,3 +1,9 @@
+/*
+Mykyta Chernenky
+CS 455 - Mobile Computing
+Metadata.ts - manages all data files and has a back up vopy of the data in case the data files are not accessible
+*/
+
 import { Metadata } from '../interfaces/metadata';
 
 export const METADATA: Metadata = {

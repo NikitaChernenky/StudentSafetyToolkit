@@ -1,6 +1,7 @@
 /*
 Mykyta Chernenky
 CS 455 - Mobile Computing
+This page requires no typescript logic
 */
 
 import { Component, OnInit } from '@angular/core';

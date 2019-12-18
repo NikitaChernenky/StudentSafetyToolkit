@@ -1,3 +1,9 @@
+<!--
+  Mykyta Chernenky
+  CS 455
+  Report Incident page
+-->
+
 <ion-header>
     <ion-toolbar color="secondary">
         <ion-title>
@@ -5,7 +11,7 @@
         </ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+  <ion-content> <!-- loop through incidents and show incident titles -->
     <ion-card *ngFor="let incident of incidents" (click)="continueToForm(incident.title)">
     <ion-item>
         <ion-label class="ion-text-wrap, cardLabel">{{ incident.title }}</ion-label>

@@ -1,3 +1,8 @@
+<!--
+  Mykyta Chernenky
+  CS 455
+  Incident disclaimer page
+-->
 <ion-header>
   <ion-toolbar class="toolbar-title" class="ion-text-wrap" color="secondary">
     <h4>
@@ -66,7 +71,7 @@
       </ul>
     </ion-text>
 
-    <ion-list>
+    <ion-list> <!-- show last 2 contacts from the list-->
       <ion-item class="phoneNumber" *ngFor="let contact of contacts">
         <ion-label class="ion-text-wrap">
           <h2>{{ contact.name }}</h2>

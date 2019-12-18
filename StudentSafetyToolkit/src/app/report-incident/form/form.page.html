@@ -1,3 +1,9 @@
+<!--
+  Mykyta Chernenky
+  CS 455
+  Form.page.html - Report Incident email form page
+-->
+
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title>
@@ -19,15 +25,16 @@
       </div>
       (a) The names of each person invoved
       <ion-item>
+         <!--textarea value is binded via angular tool ngModel to store the entered data-->
         <ion-textarea
-          [(ngModel)]="fieldA"
+          [(ngModel)]="fieldA" 
           placeholder="Enter names..."
           auto-grow="true"
           maxlength="500"
         ></ion-textarea>
       </ion-item>
       (b) The date, time and location of the occurrence:
-      <ion-item>
+      <ion-item>  <!--date value is binded via angular tool ngModel to store the entered data-->
         <ion-label>Date</ion-label>
         <ion-datetime
           [(ngModel)]="date"
@@ -38,11 +45,11 @@
       <ion-item>
         <ion-label>
           Location
-        </ion-label>
+        </ion-label>  <!--location value is binded via angular tool ngModel to store the entered data-->
         <ion-input [(ngModel)]="location" class="ion-text-end"></ion-input>
       </ion-item>
       (c) The circumstances related to the occurrence:
-      <ion-item>
+      <ion-item>  <!--textarea value is binded via angular tool ngModel to store the entered data-->
         <ion-textarea
           [(ngModel)]="fieldC"
           auto-grow="true"
@@ -52,7 +59,7 @@
       (d) Nunc ut lectus non neque efficitur sagittis et sit amet dolor. Duis
       eget luctus ante. Morbi tincidunt quam et lorem mattis fermentum. Donec at
       felis ac lacus sodales aliquam nec et quam:
-      <ion-item>
+      <ion-item>  <!--textarea value is binded via angular tool ngModel to store the entered data-->
         <ion-textarea
           [(ngModel)]="fieldD"
           auto-grow="true"

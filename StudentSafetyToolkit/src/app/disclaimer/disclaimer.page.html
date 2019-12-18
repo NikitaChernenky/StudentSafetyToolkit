@@ -1,3 +1,8 @@
+<!--
+  Mykyta Chernenky
+  CS 455
+  disclaimer.html page
+-->
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title>
@@ -31,7 +36,7 @@
     <ion-row>
         <ion-col offset="0.2">
     <div class="validation">
-        <ng-container *ngIf="displayError" >
+        <ng-container *ngIf="displayError" > <!-- if not checked box, show validation error message-->
           <div>
            <ion-label class="validationText">* You must agree to the terms and conditions</ion-label>
           </div>

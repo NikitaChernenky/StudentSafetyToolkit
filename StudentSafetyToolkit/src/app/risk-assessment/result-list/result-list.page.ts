@@ -1,7 +1,7 @@
 /*
 Mykyta Chernenky
 CS 455 - Mobile Computing
-Result List page - Show Risk Assessment final page
+Result List page. TS - Show Risk Assessment final page
 */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';

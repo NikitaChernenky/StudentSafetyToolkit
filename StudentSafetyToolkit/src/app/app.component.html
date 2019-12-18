@@ -1,9 +1,15 @@
+<!--
+Mykyta Chernenky
+CS 455 - Mobile Computing
+APP COMPONENT - Tab bar layout implementation is here
+-->
+
 <ion-app>
   <ion-content>
     <ion-router-outlet main></ion-router-outlet>
   </ion-content>
-  <div *ngIf="!(isDisclaimerPage())">
-  <ion-footer>
+  <div *ngIf="!(isDisclaimerPage())"> <!-- dont show tab bar on disclaimer page-->
+  <ion-footer> <!--show tab bar in the footer..-->
     <ion-tab-bar slot="bottom" color="primary">
     <ion-tab-button [routerLink]="['/incident-disclaimer-page']">
       <ion-icon name="document"></ion-icon>

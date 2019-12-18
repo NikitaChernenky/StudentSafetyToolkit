@@ -1,3 +1,9 @@
+<!--
+  Mykyta Chernenky
+  CS 455
+  contacts.html page
+-->
+
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title>Contacts</ion-title>
@@ -6,18 +12,18 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let contact of contacts">
+    <ion-item *ngFor="let contact of contacts"> <!--loop thrugh contacts array items-->
       <ion-grid> 
         <ion-row>
           <ion-label class="ion-text-wrap">
-            <h2>{{contact.name}}</h2>
+            <h2>{{contact.name}}</h2> <!-- show contact name-->
           </ion-label>
         </ion-row>
         <ion-row>
             <ion-col size="9" size-lg="9" size-xs="8">
-          <a href="tel:{{contact.number}}">{{contact.number}}</a>
+          <a href="tel:{{contact.number}}">{{contact.number}}</a> <!-- show contact number-->
             </ion-col>
-            <ion-col size="3" size-lg="3" size xs="3" *ngIf="contact.name !== 'First Aid Line (24 HRS)'">
+            <ion-col size="3" size-lg="3" size xs="3" *ngIf="contact.name !== 'First Aid Line (24 HRS)'"> <!-- put email next to all contacts except for 24 HRS Emergency Contacts-->
                 <ion-button block (click)="continueToEmail(contact.name)">E-mail</ion-button>
             </ion-col>
         </ion-row>

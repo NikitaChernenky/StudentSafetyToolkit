@@ -1,3 +1,9 @@
+<!--
+  Mykyta Chernenky
+  CS 455
+  Links.page.html - Links page
+-->
+
 <ion-header>
   <ion-toolbar color="secondary">
       <ion-title>
@@ -6,8 +12,8 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-card *ngFor="let link of links" (click)="onClick(link)">
-  <ion-item>
+  <ion-card *ngFor="let link of links" (click)="onClick(link)"> <!-- loop through likn items-->
+  <ion-item> <!-- show link name and description-->
       <ion-icon name="{{ link.icon }}" slot="end"></ion-icon>
       <ion-label class="ion-text-wrap">{{ link.name }}</ion-label>
       <ion-icon name="arrow-forward" slot="end" color="light"></ion-icon>

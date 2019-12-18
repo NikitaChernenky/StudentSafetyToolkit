@@ -1,3 +1,10 @@
+<!--
+  Mykyta Chernenky
+  CS 455
+  Select Severity
+-->
+
+
 <ion-header>
     <ion-toolbar color="secondary">
       <ion-title>Select Severity</ion-title>
@@ -7,7 +14,7 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-content>
+  <ion-content> <!-- show all severities using ngFor to loop through them-->
       <ion-card *ngFor="let item of this.dataService.SelectedType.severities; index as i" button (click)="SelectSeverity(i)">
         <ion-card-content class="minor ion-text-center" *ngIf="i == 0">
           <div [innerHTML]="item"></div>

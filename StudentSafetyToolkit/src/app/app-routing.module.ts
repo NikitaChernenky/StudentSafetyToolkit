@@ -1,3 +1,9 @@
+/*
+Mykyta Chernenky
+CS 455 - Mobile Computing
+App-routing.module.ts - This is where Angular routing is implemented
+*/
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 

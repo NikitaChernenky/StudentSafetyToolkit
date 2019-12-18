@@ -1,3 +1,9 @@
+/*
+Mykyta Chernenky
+CS 455 - Mobile Computing
+Incidents.ts - This file contains incidents data
+*/
+
 import { Incident } from '../interfaces/metadata';
 
 export const INCIDENTS: Incident[] = [

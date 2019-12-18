@@ -1,3 +1,8 @@
+/*
+Mykyta Chernenky
+CS 455 - Mobile Computing
+Disclaimer.ts
+*/
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +22,7 @@ export class DisclaimerPage implements OnInit {
 
   ngOnInit() {}
 
-  isChecked() {
+  isChecked() { // check of the box is ticked
     if (this.agreedToConditions) {
       return true;
     } else {
@@ -26,12 +31,12 @@ export class DisclaimerPage implements OnInit {
 }
 
 
-  continue() {
-    if (this.isChecked()) {
-    this.storage.set('disclaimerShown', true);
-    this.router.navigate(['/app-info']);
-    } else {
-      this.displayError = true;
+  continue() { // if box is ticked -> continue to the appliciation 
+    if (this.isChecked()) { // if box is checked
+    this.storage.set('disclaimerShown', true); // make the app aware that the user has ticked the box so this page doesn't shpw up again
+    this.router.navigate(['/app-info']); // route to app info page
+    } else { // if not ticked
+      this.displayError = true; // display validation error
     }
   }
 }

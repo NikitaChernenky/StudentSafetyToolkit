@@ -5,7 +5,7 @@ Metadata.service.ts
 */
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Incident2 } from '../classes/incident';
+import { Incident2 } from "../classes/Incident2";
 import { Observable, of } from 'rxjs';
 import {
   Metadata,
